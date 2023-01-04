@@ -9,7 +9,6 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Get admb and put in path, windows
-        if: matrix.config.os == 'windows-latest'
         run: |
           Invoke-WebRequest -Uri https://github.com/admb-project/admb/releases/download/admb-13.1/admb-13.1-windows.zip -OutFile "D:\a\stock-synthesis\stock-synthesis\admb-13.1.zip"
           Expand-Archive -LiteralPath "D:\a\stock-synthesis\stock-synthesis\admb-13.1.zip" -DestinationPath "D:\a\stock-synthesis\stock-synthesis\"
