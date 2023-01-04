@@ -1,26 +1,7 @@
-on:
-  workflow_call:
-    # inputs:
-      # # options: should be "win", "osx, "linux"
-      # operating-sys:
-      #   required: true
-      #   type: string
+on: [push]
 jobs:
-  build-ss3:
-    runs-on: ${{ matrix.config.os }}
-    name: ${{ matrix.config.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - {os: windows-latest}
-          - {os: macos-latest}
-          - {os: ubuntu-latest}
-    # Limit run time to 90 min to avoid wasting action minutes.
-    # was set to 15 and then 30 minutes previously, but compiling admb
-    # on mac took too long
-    timeout-minutes: 90
-
+  test:
+    runs-on: windows-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
