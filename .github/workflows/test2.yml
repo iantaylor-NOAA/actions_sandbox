@@ -40,4 +40,3 @@ jobs:
         run: |
           cd D:\a\ADMB-13.1\examples\admb\simple
           admb simple
-          ./simple
