@@ -31,6 +31,7 @@ jobs:
 
       - name: compile ADMB example
         run: |
-          cd D:\a\stock-synthesis\stock-synthesis\admb-13.1\examples\admb\simple
+          cd D:\a\ADMB-13.1\examples\admb\simple
           admb simple
           simple
+          ./simple
